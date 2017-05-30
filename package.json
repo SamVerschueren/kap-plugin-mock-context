@@ -1,6 +1,6 @@
 {
   "name": "kap-plugin-mock-context",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Kap plugin mock context",
   "license": "MIT",
   "repository": "SamVerschueren/kap-plugin-mock-context",
