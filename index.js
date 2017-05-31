@@ -1,6 +1,5 @@
 'use strict';
 const path = require('path');
-const clipboardy = require('clipboardy');
 const Conf = require('conf');
 const got = require('got');
 
@@ -34,9 +33,7 @@ module.exports = opts => {
 		config,
 		request: got,
 		notify: text => { },						// eslint-disable-line no-unused-vars
-		copyToClipboard: text => {
-			clipboardy.writeSync(text);
-		},
+		copyToClipboard: text => { },				// eslint-disable-line no-unused-vars
 		setProgress: (text, percentage) => { },		// eslint-disable-line no-unused-vars
 		openConfigFile: () => { },
 		cancel: () => { }

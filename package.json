@@ -29,7 +29,6 @@
     "stubbing"
   ],
   "dependencies": {
-    "clipboardy": "^1.1.2",
     "conf": "^1.1.1",
     "got": "^7.0.0"
   },
