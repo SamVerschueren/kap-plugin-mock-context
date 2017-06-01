@@ -13,7 +13,14 @@ test('mock context', async t => {
 		}
 	});
 
+	ctx.config.set('cat', '🐈');
+
 	t.is(ctx.format, 'gif');
 	t.is(ctx.config.get('unicorn'), '🦄');
+	t.is(ctx.config.get('cat'), '🐈');
 	t.is(await ctx.filePath(), 'path/foo.gif');
+
+	ctx.config.clear();
+
+	t.deepEqual(ctx.config.store, {});
 });

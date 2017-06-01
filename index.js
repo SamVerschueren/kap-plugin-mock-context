@@ -1,15 +1,8 @@
 'use strict';
 const path = require('path');
-const Conf = require('conf');
 const got = require('got');
-
-const pad = n => n < 10 ? '0' + n : n;
-
-const date = () => {
-	const now = new Date();
-
-	return `${now.getFullYear()}-${pad(now.getMonth())}-${pad(now.getDate())} at ${now.getHours()}.${pad(now.getMinutes())}.${pad(now.getSeconds())}`;
-};
+const date = require('./utils/date');
+const MockConf = require('./utils/mock-conf');
 
 module.exports = opts => {
 	opts = Object.assign({
@@ -20,8 +13,7 @@ module.exports = opts => {
 		throw new TypeError(`Expected \`file\` to be of type \`string\`, got \`${typeof opts.file}\``);
 	}
 
-	const config = new Conf();
-	config.clear();
+	const config = new MockConf();
 	config.set(opts.config);
 
 	const format = path.extname(opts.file).slice(1);
