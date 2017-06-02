@@ -1,6 +1,5 @@
 'use strict';
 const path = require('path');
-const got = require('got');
 const date = require('./utils/date');
 const MockConf = require('./utils/mock-conf');
 
@@ -23,7 +22,7 @@ module.exports = opts => {
 		defaultFileName: `Kapture ${date()}.${format}`,
 		filePath: () => Promise.resolve(opts.file),
 		config,
-		request: got,
+		request: () => { },
 		notify: text => { },						// eslint-disable-line no-unused-vars
 		copyToClipboard: text => { },				// eslint-disable-line no-unused-vars
 		setProgress: (text, percentage) => { },		// eslint-disable-line no-unused-vars
